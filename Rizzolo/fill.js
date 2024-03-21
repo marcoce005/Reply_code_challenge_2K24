@@ -16,8 +16,28 @@ function fill(n, map){
             map.set(i, [])
         }
     }
-    return map;
+    return new Map([...map.entries()].sort())
 }
 
-fill(10, initial);
+let n = 10
 
+let map = fill(n, initial);
+
+for(let i of map){
+    console.log(i)
+}
+
+let caso = [];
+// while(free=false){
+    for (let i = 0; i < n; i++) {
+        let up_stick = map.get(i)
+        if(up_stick!=undefined && up_stick.toString()==[].toString()){
+            console.log(i)
+            caso.push(i)
+        }else{
+            while(up_stick!="" && up_stick!=undefined){
+                console.log(i)
+            }
+        }
+    }
+// }
